@@ -22,14 +22,14 @@ const FilterCompo = ({ filters, setFilters }) => {
                     type="checkbox"
                     value={itm?.name}
                     onChange={(e) => {
-                      if (filters.brand == e.target.value) {
+                      if (filters.brand === e.target.value) {
                         setFilters({ ...filters, brand: "" });
                       } else {
                         setFilters({ ...filters, brand: e.target.value });
                       }
                     }}
                   />
-                  <h1>{itm?.name.toUpperCase()}</h1>
+                  <h1>{itm?.name}</h1>
                 </div>
               );
             })}
@@ -46,14 +46,14 @@ const FilterCompo = ({ filters, setFilters }) => {
                     type="checkbox"
                     value={itm?.name}
                     onChange={(e) => {
-                      if (filters.category == e.target.value) {
+                      if (filters.category === e.target.value) {
                         setFilters({ ...filters, category: "" });
                       } else {
                         setFilters({ ...filters, category: e.target.value });
                       }
                     }}
                   />
-                  <h1>{itm?.name.toUpperCase()}</h1>
+                  <h1>{itm?.name}</h1>
                 </div>
               );
             })}
@@ -66,18 +66,18 @@ const FilterCompo = ({ filters, setFilters }) => {
             return (
               <div className="flex items-center gap-[0.5rem]">
                 <input
-                  checked={filters.price == itm?.value}
+                  checked={filters.price === itm?.value}
                   type="checkbox"
                   value={itm?.value}
                   onChange={(e) => {
-                    if (filters.price == e.target.value) {
+                    if (filters.price === e.target.value) {
                       setFilters({ ...filters, price: "" });
                     } else {
                       setFilters({ ...filters, price: e.target.value });
                     }
                   }}
                 />
-                <h1>{itm?.name.toUpperCase()}</h1>
+                <h1>{itm?.name}</h1>
               </div>
             );
           })}

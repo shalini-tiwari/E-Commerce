@@ -6,6 +6,7 @@ export const Product = ({
   name,
   brand,
   catego,
+  mrpPrice,
   img,
   price,
   reviewCount,
@@ -13,14 +14,16 @@ export const Product = ({
   star,
 }) => {
   const findDiscountedPrice = (price, percent) => {
-    return Math.floor(price + (percent / 100) * price * 2 - 1);
+    return Math.floor(
+      ((Math.floor(mrpPrice) - Math.floor(price)) / Math.floor(mrpPrice)) * 100
+    );
   };
   return (
-    <div className="bg-white rounded shadow-md w-[15rem] h-[20rem] relative">
+    <div className="bg-white rounded shadow-md w-[15rem] relative">
       <img
         src={img}
         alt="product"
-        className="w-full h-2/4 object-cover rounded mb-2"
+        className="w-full h-32 object-cover rounded mb-2"
       />
       <HeartIcon className="h-6 text-[#98999B] absolute right-2 top-2" />
       <div className="p-[0.75rem] flex flex-col gap-1">
@@ -32,12 +35,18 @@ export const Product = ({
         </div>
         <div className="flex gap-2 items-baseline">
           <h1 className="text-black text-[1.5rem] font-semibold">
-            ${Math.floor(price)}
+            ${price.toFixed(1)}
           </h1>
-          <h1 className="line-through text-[#7e7e7e] font-semibold">
-            ${findDiscountedPrice(price, dp)}
-          </h1>
-          <h1 className="text-green-600 font-semibold">{dp}% off</h1>
+          {Math.floor(mrpPrice) === Math.floor(price) ? null : (
+            <>
+              <h1 className="line-through text-[#7e7e7e] font-semibold">
+                ${mrpPrice.toFixed(1)}
+              </h1>
+              <h1 className="text-green-600 font-semibold">
+                {findDiscountedPrice(price, dp)}% off
+              </h1>
+            </>
+          )}
         </div>
       </div>
     </div>

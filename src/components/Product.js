@@ -5,7 +5,6 @@ import ReviewStars from "./ReviewStars";
 export const Product = ({
   name,
   brand,
-  catego,
   mrpPrice,
   img,
   price,
@@ -25,7 +24,7 @@ export const Product = ({
         alt="product"
         className="w-full h-32 object-cover rounded mb-2"
       />
-      <HeartIcon className="h-6 text-[#98999B] absolute right-2 top-2" />
+      <HeartIcon className="h-6 text-[#98999B] hover:text-red-400 hover:cursor-pointer z-10 absolute right-2 top-2" />
       <div className="p-[0.75rem] flex flex-col gap-1">
         <h1 className="font-medium text-[#4e4e4e] truncate">{name}</h1>
         <p className="text-[0.75rem] font-bold text-[#8F8F8F]">{brand}</p>

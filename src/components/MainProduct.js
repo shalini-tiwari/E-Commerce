@@ -16,7 +16,7 @@ const MainProduct = ({ search, brand, category, price, sort, setSort }) => {
       });
       return arr;
     } else {
-      if (secondVal === 100) {
+      if (secondVal == 100) {
         let arr = tempDatax.filter((itm) => {
           if (itm?.price < secondVal) {
             return itm;
@@ -24,7 +24,7 @@ const MainProduct = ({ search, brand, category, price, sort, setSort }) => {
         });
         return arr;
       }
-      if (secondVal === 199) {
+      if (secondVal == 199) {
         let arr = tempDatax.filter((itm) => {
           if (itm?.price >= 100 && itm?.price <= secondVal) {
             return itm;
@@ -32,7 +32,7 @@ const MainProduct = ({ search, brand, category, price, sort, setSort }) => {
         });
         return arr;
       }
-      if (secondVal === 599) {
+      if (secondVal == 599) {
         let arr = tempDatax.filter((itm) => {
           if (itm?.price >= 200 && itm?.price <= secondVal) {
             return itm;
@@ -40,7 +40,7 @@ const MainProduct = ({ search, brand, category, price, sort, setSort }) => {
         });
         return arr;
       }
-      if (secondVal === 999) {
+      if (secondVal == 999) {
         let arr = tempDatax.filter((itm) => {
           if (itm?.price >= 600 && itm?.price <= secondVal) {
             return itm;
@@ -48,7 +48,7 @@ const MainProduct = ({ search, brand, category, price, sort, setSort }) => {
         });
         return arr;
       }
-      if (secondVal === 1000) {
+      if (secondVal == 1000) {
         let arr = tempDatax.filter((itm) => {
           if (itm?.price > secondVal) {
             return itm;
@@ -60,7 +60,7 @@ const MainProduct = ({ search, brand, category, price, sort, setSort }) => {
   };
   const sortBro = (type) => {
     console.log(type);
-    if (type === "hl") {
+    if (type == "hl") {
       let arrNew = tempDatax;
       let arr = arrNew.sort((a, b) => {
         console.log(a.price, b.price);
@@ -72,7 +72,7 @@ const MainProduct = ({ search, brand, category, price, sort, setSort }) => {
       });
       setDatax(arr);
     }
-    if (type === "lh") {
+    if (type == "lh") {
       let arrNew = tempDatax;
       let arr = arrNew.sort((a, b) => {
         if (a.price < b.price) {
@@ -86,16 +86,16 @@ const MainProduct = ({ search, brand, category, price, sort, setSort }) => {
   };
   React.useEffect(() => {
     //data reset ifs
-    if (search === "") {
+    if (search == "") {
       setDatax(tempDatax);
     }
-    if (brand === "") {
+    if (brand == "") {
       setDatax(tempDatax);
     }
-    if (category === "") {
+    if (category == "") {
       setDatax(tempDatax);
     }
-    if (price === 0) {
+    if (price == 0) {
       setDatax(tempDatax);
     }
     //filter ifs
@@ -137,7 +137,7 @@ const MainProduct = ({ search, brand, category, price, sort, setSort }) => {
             );
           })
         ) : (
-          <h1>NO Product Found!</h1>
+          <h1>No Product Found</h1>
         )}
       </div>
     </div>

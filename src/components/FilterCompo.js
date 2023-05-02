@@ -66,7 +66,7 @@ const FilterCompo = ({ filters, setFilters }) => {
             return (
               <div className="flex items-center gap-[0.5rem]">
                 <input
-                  checked={filters.price === itm?.value}
+                  checked={filters.price == itm?.value}
                   type="checkbox"
                   value={itm?.value}
                   onChange={(e) => {

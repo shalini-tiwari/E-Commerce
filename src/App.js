@@ -17,7 +17,7 @@ const App = () => {
     if (count === 0) {
       setSort("lh");
     }
-  }, []);
+  }, [count]);
 
   return (
     <div className="">

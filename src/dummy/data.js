@@ -1,12 +1,12 @@
 export const data = [
   {
-    name: "Msi Rtx 3060",
-    brand: "msi",
+    name: "Elegant designed fiber plant",
+    brand: "decoration",
     category: "gpu",
     img: "https://cdn.mos.cms.futurecdn.net/5xUwsjzTJefR4wEmEianNP.jpg",
-    price: 187.14,
+    price: $13.5,
     reviewCount: 45,
-    discountPercent: 10,
+    discountPercent: 32,
     stars: 5,
   },
   {
